@@ -38,24 +38,20 @@
 using namespace std;
 
 int main() {
-    string n = "201220303002";
-    // cin >> n;
-    int current_pos = 8;
+    string n;
+    cin >> n;
 
     while (true) {
-        if (current_pos == n.length()) {
-            break;
-        }
-        cout << stoi(n.substr(0, current_pos)) << endl;
-        int div = stoi(n.substr(0, current_pos-1)) - birth;
-        if (div >= 0) {
-            n.replace(current_pos, 8, to_string(div));
-            cout << n << endl;
+        if (n.length() < 19) {
+            unsigned long long div = stoull(n.substr(0, n.length())) - birth * (stoull(n.substr(0, n.length()))/birth);
+            n.replace(0, 19, to_string((int)div));
+            if (div < birth)
+                break;
         } else {
-            current_pos ++;
+            unsigned long long div = stoull(n.substr(0, 19)) - birth * (stoull(n.substr(0, 19)) / birth);
+            n.replace(0, 19, to_string((int)div));
         }
     }
-
-
+    cout << n << endl;
     return 0;
 }
