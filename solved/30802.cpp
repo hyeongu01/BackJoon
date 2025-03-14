@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ void print_cal_pencle(int N, int P) {
 int cal_shirt(vector<int> sizes, int T) {
     int sum = 0;
     for (auto size: sizes) {
-        sum += ((size-1) / T) + 1;
+        sum += (size == 0 ? 0 : ((size-1) / (T)) + 1);
     }
     return sum;
 }
@@ -24,16 +25,21 @@ int cal_shirt(vector<int> sizes, int T) {
 int main() {
     int N;
     cin >> N;
-    cin.ignore(10, '\n');
+    cin.ignore(15, '\n');
 
-    string sizes;
-    getline(cin, sizes);
+    vector<int> sizes;
+    for (int i = 0; i < 6; i++) {
+        int temp;
+        cin >> temp;
+        sizes.push_back(temp);
+    }
 
-    cout << sizes << endl;
-    
+    int t;
+    int p;
+    cin >> t >> p;
 
-    
-
+    cout << cal_shirt(sizes, t) << endl;
+    print_cal_pencle(N, p);
 
     return 0;
 }
