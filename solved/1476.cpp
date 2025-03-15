@@ -9,9 +9,7 @@ using namespace std;
 int main() {
     int e, s, m;
     cin >> e >> s >> m;
-    e --;
-    s --;
-    m --;
+    e --; s --; m --;
     int result = e;
 
     while(true) {
