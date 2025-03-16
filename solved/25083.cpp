@@ -1,4 +1,5 @@
 /*
+    https://www.acmicpc.net/problem/25083
          ,r'"7
 r`-_   ,'  ,/
  \. ". L_r'
@@ -18,7 +19,5 @@ int main() {
     cout << "   `~\\/" << endl;
     cout << "      |" << endl;
     cout << "      |" << endl;
-
-
     return 0;
 }
