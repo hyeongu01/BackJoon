@@ -5,6 +5,10 @@
      -> map 자료구조를 활용 
         map 은 레드블랙트리 자료구조를 활용하여 key값을 기준으로 자동 정렬하여 삽입, 삭제한다.
         기본적으로 map은 key값의 중복을 허용하지 않지만, multimap은 허용한다.
+
+    아래 두 코드를 추가하니 실행시간이 2756ms -> 60ms가 되었다.
+     std::cin.tie(NULL);
+     std::ios_base::sync_with_stdio(false);
 */
 
 // Multimap을 활용한 풀이
@@ -13,6 +17,9 @@
 #include <string>
 
 int main() {
+    std::cin.tie(NULL);
+    std::ios_base::sync_with_stdio(false);
+
     int N;
     std::multimap<int, std::string> users;
 
@@ -26,7 +33,7 @@ int main() {
     }
 
     for (auto x: users) {
-        std::cout << x.first << " " << x.second << std::endl;
+        std::cout << x.first << " " << x.second << "\n";
     }
 
     return 0;
