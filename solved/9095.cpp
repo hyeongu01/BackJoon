@@ -34,8 +34,6 @@ int countAdd(int n) {
             int one = n - (three * 3 + two * 2);
             if (one >= 0) {
                 result += (combination(one+two+three, one) * combination(two+three, two));
-                std::cout << "one: " << one << " two: " << two << " three: " << three << std::endl;
-                std::cout << "comp: " << (combination(one+two+three, one) * combination(two+three, two)) << " result: " << result << std::endl;
             } else
                 break;
         }
