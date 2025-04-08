@@ -9,17 +9,15 @@
 bool checkPars(std::string inputPars) {
     std::vector<char> pars;
 
-    if (inputPars.back() == '(')
-        return false;
-
     while (inputPars.empty() != true) {
         char temp = inputPars.back();
         inputPars.pop_back();
         if (temp == ')') {
             pars.push_back(temp);
         } else {
-            if (pars.back() == ')')
+            if (pars.empty() == false && pars.back() == ')') {
                 pars.pop_back();
+            }
             else
                 return false;
         }
@@ -38,7 +36,7 @@ int main() {
     for (int i = 0; i < T; i++) {
         std::string inputPars;
         std::cin >> inputPars;
-        result += (checkPars(inputPars) ? "YES\n" : "No\n");
+        result += (checkPars(inputPars) ? "YES\n" : "NO\n");
     }
     std::cout << result;
 
