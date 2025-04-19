@@ -53,6 +53,8 @@
         "unordered_map": "cpp",
         "variant": "cpp",
         "algorithm": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "__config": "cpp",
+        "__assert": "cpp"
     }
 }
